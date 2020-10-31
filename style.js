@@ -1,8 +1,21 @@
 //setInterval to do the timed functionality 
 
+//set starting score and start the interval to begin the startdown
+
+//Start the interval to begin the countdown
+
 //clear interval to stop the timeout
 
 // VAR CurrentScore /timeleft
+
+var startQuiz = "START"
+
+function startQuiz(){
+
+}
+startQuiz.addEventListener("click", startQuiz);
+
+
 
 //Question to loop over, arrays 
 
