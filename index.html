@@ -8,14 +8,79 @@
 </head>
 <body>
     <header>
-        <h6>View Highscores</h6>
-        <h6>Time</h6>
+        <h6 id = highscore>View Highscores</h6>
+        <h6 id= timer>Time</h6>
     </header>
     <section>
 
         <h1>Coding Quiz Challenge</h1>
         <h2>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time by ten seconds!</h2>
         <button class = button1>Start Quiz</button>
+    </section>
+
+    <section id=first-set>
+        <h2>Commonly used data types DO NOT include:</h2>
+        <div id="first-question">
+           1.Strings <br>
+           2.Booleans<br>
+           3.Alerts<br>
+           4.Numbers
+        </div>
+        
+    </section>
+    <section id=second-set>
+        <h2>The condition in an if/else statement is enclosed within _______.</h2>
+        <div id="second-question">
+            1.Quotes<br>
+            2.Curly brackets<br>
+            3.Parentheses<br>
+            4.Square brackets
+        </div>
+    </section>
+
+    <section id= third-set>
+        <h2>Arrays in JavaScript can be used to store ___.</h2>
+        <div id="third-question" >
+            1.Numbers and strings<br>
+            2.Other arrays<br>
+            3.Booleans<br>
+            4. All of the above
+        </div>
+    </section>
+
+    <section id="fourth-set" >
+        <h2>String values must be enclosed within ____- when being assigned to variables.</h2>
+        <div id="fourth-question" >
+            1.Commas<br>
+            2.Curly brackets<br>
+            3.Quotes<br>
+            4.ParenthesesM
+        </div>
+    </section>
+
+    <section id="fifth-set" >
+        <h2>A very useful tool used during development and debugging for printing content to the debugger is:</h2>
+        <div id="fifth-question" >
+            1.JavaScript<br>
+            2.Terminal/Bash<br>
+            3.For loops<br>
+            4.Console log
+
+        </div>
+    </section>
+
+    <section id="Done" >
+        <h2>All done!</h2>
+        <p>Your final score is <span id="score"></span></p>
+        <p>Enter initials: <input type="text" name="initials" id="initials"></p>
+        <button id="initials-submit">Submit</button>
+    </section>
+
+    <section>
+        <h1>Highscores</h1>
+        <div id="score-final"></div>
+        <button id="go-back">Go back</button>
+        <button id="clear">Clear Highscores</button>
     </section>
     <script src="style.js"> </script>
 </body>
