@@ -7,21 +7,21 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <header>
+    <header class="header-score-timer">
 
-        <h6 id = highscore>View Highscores</h6>
-        <h6 id= timer>Time</h6>
+        <h4 id = highscore>View Highscores</h4>
+        <h4 id= timer>Time</h4>
 
     </header>
-    <section>
+    <section class="start-quiz">
 
         <h1 id="quiz-start">Coding Quiz Challenge</h1>
         <h2 id="quiz-start1">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time by ten seconds!</h2>
-        <button class = button1>Start Quiz</button>
+        <button class = button>Start Quiz</button>
 
     </section>
 
-    <section id=first-set>
+    <section id=sets>
 
         <h2>Commonly used data types DO NOT include:</h2>
 
@@ -36,7 +36,7 @@
         
     </section>
 
-    <section id=second-set>
+    <section id=sets>
 
         <h2>The condition in an if/else statement is enclosed within _______.</h2>
 
@@ -51,7 +51,7 @@
 
     </section>
 
-    <section id= third-set>
+    <section id= sets>
 
         <h2>Arrays in JavaScript can be used to store ___.</h2>
 
@@ -66,9 +66,9 @@
 
     </section>
 
-    <section id="fourth-set" >
+    <section id="sets" >
 
-        <h2>String values must be enclosed within ____- when being assigned to variables.</h2>
+        <h2>String values must be enclosed within ____when being assigned to variables.</h2>
 
         <div id="fourth-question" >
 
@@ -81,7 +81,7 @@
 
     </section>
 
-    <section id="fifth-set" >
+    <section id="sets" >
 
         <h2>A very useful tool used during development and debugging for printing content to the debugger is:</h2>
 
@@ -93,10 +93,10 @@
             <button>4.Console log</button>
 
         </div>
-        
+
     </section>
 
-    <section id="Done" >
+    <section id="done" >
         <h2>All done!</h2>
         <p>Your final score is <span id="score"></span></p>
         <p>Enter initials: <input type="text" name="initials" id="initials"></p>
