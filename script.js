@@ -1,3 +1,11 @@
+//Getting all required elements
+
+var startButton = document.getElementById("button-start");
+var timer = document.getElementById("timer");
+var highscore = document.getElementById("highscore");
+
+
+
 //setInterval to do the timed functionality 
 
 //set starting score and start the interval to begin the startdown
@@ -8,7 +16,7 @@
 
 // VAR CurrentScore /timeleft
 
-var startQuiz = "START"
+
 
 function startQuiz(){
 
