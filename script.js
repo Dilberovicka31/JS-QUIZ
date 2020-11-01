@@ -3,10 +3,28 @@
 var startButton = document.getElementById("button-start");
 var timer = document.getElementById("timer");
 var highscore = document.getElementById("highscore");
+var questionOne = document.getElementById("first-question");
+var qeustionTwo = document.getElementById("second-question");
+var qeustionThree = document.getElementById("third-question");
+var qeustionFour = document.getElementById("fourth-question");
+var qeustionFive = document.getElementById("fifth-question");
 
 
 
 //setInterval to do the timed functionality 
+var countdown = 75;
+startButton.onclick = setInterval(function (){
+
+
+},1000);
+
+
+
+
+
+
+   
+
 
 //set starting score and start the interval to begin the startdown
 
