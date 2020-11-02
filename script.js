@@ -4,20 +4,28 @@ var startButton = document.getElementById("button-start");
 var timer = document.getElementById("timer");
 var highscore = document.getElementById("highscore");
 var questionOne = document.getElementById("first-question");
-var qeustionTwo = document.getElementById("second-question");
-var qeustionThree = document.getElementById("third-question");
-var qeustionFour = document.getElementById("fourth-question");
-var qeustionFive = document.getElementById("fifth-question");
-
-
+var questionTwo = document.getElementById("second-question");
+var questionThree = document.getElementById("third-question");
+var questionFour = document.getElementById("fourth-question");
+var questionFive = document.getElementById("fifth-question");
+var setsOfQuestions = document.getElementById("sets");
+var score = 0;
 
 //setInterval to do the timed functionality 
-var countdown = 75;
-startButton.onclick = setInterval(function (){
+var countdown = 75; //put it where the function begins  do timeStart =75
 
+function timer () {
+   countdown = countdown -1;
+   if (countdown < 75) {
+      timer.innerHTML = countdown;
+   }
 
-},1000);
+}
+if (countdown < 1) {
+   window.clearInterval(update);
+}
 
+update = setInterval("timer()", 1000);
 
 
 
