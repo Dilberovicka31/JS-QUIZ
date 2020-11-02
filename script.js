@@ -8,13 +8,22 @@ var questionTwo = document.getElementById("second-question");
 var questionThree = document.getElementById("third-question");
 var questionFour = document.getElementById("fourth-question");
 var questionFive = document.getElementById("fifth-question");
-var setsOfQuestions = document.getElementById("sets");
+var setsOfQuestions = document.getElementById("#sets");
 var score = 0;
+
+
+startButton.addEventListener("click", startQuiz);
+
+function startQuiz(){
+   countdown = 75
+   setsOfQuestions.classList.remove('hide')
+
+}
 
 //setInterval to do the timed functionality 
 var countdown = 75; //put it where the function begins  do timeStart =75
 
-function timer () {
+function timeStart () {
    countdown = countdown -1;
    if (countdown < 75) {
       timer.innerHTML = countdown;
@@ -25,7 +34,7 @@ if (countdown < 1) {
    window.clearInterval(update);
 }
 
-update = setInterval("timer()", 1000);
+update = setInterval("timeStart()", 1000);
 
 
 
@@ -44,10 +53,7 @@ update = setInterval("timer()", 1000);
 
 
 
-function startQuiz(){
 
-}
-startQuiz.addEventListener("click", startQuiz);
 
 
 
