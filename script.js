@@ -27,6 +27,23 @@ function renderQuestions(){
       document.getElementById("question").innerHTML = questions[index].title;
       renderQuestionChoices();
    }
+}
+function renderQuestionChoices(){
+      var question = questions[index].choices;
+      for( var option = 0; option < question.length;option++) {
+         var questionOptionDiv = document.getElementById("question-choices");
+         var questionButton = document.createElement("button");
+         questionButton.className = "btn btn-primary";
+         questionButton.innerHTML = question[option];
+         questionButton.setAttribute(
+            "onclick", 
+            "checkAnswer(" + index + "," + option + ");"
+        );
+
+
+         questionOptionDiv.append(questionButton);
+      }
+}
 
 
 
