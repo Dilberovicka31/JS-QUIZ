@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS QUIZ</title>
+
+    <script src="questions.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <header class="header-score-timer">
 
-        <h4 id = highscore>View Highscores</h4>
-        <h4 id= timer>Time: 75</h4>
+        <h4 id = "highscore">View Highscores</h4>
+        <h4 id= "timer">Time: 75</h4>
+       
 
     </header>
-    <section class="start-quiz">
+    <section id="start-quiz">
 
         <h1 id="quiz-start">Coding Quiz Challenge</h1>
         <h2 id="quiz-start1">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time by ten seconds!</h2>
@@ -21,7 +24,7 @@
 
     </section>
 
-    <section id=sets>
+    <!-- <section id=sets>
 
         <h2>Commonly used data types DO NOT include:</h2><br>
 
@@ -94,7 +97,17 @@
 
         </div>
 
-    </section>
+    </section> -->
+    <div id="quiz" style = "display: none" > 
+        <h1>Answer the questions below</h1>
+        
+    </div>
+    
+<section class="container d-none" >
+    <h3 id="question"></h3>
+    <div id="question-choices"></div>
+</section>
+
 
     <section id="done" >
         <h2>All done!</h2><br>
@@ -113,5 +126,6 @@
 
     
    <script src="script.js"></script>
+  
 </body>
 </html>

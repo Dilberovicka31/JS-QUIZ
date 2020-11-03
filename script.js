@@ -3,38 +3,87 @@
 var startButton = document.getElementById("button-start");
 var timer = document.getElementById("timer");
 var highscore = document.getElementById("highscore");
-var questionOne = document.getElementById("first-question");
-var questionTwo = document.getElementById("second-question");
-var questionThree = document.getElementById("third-question");
-var questionFour = document.getElementById("fourth-question");
-var questionFive = document.getElementById("fifth-question");
-var setsOfQuestions = document.getElementById("#sets");
-var score = 0;
-
-
+var start = document.getElementById("start-quiz");
+var quiz = document.getElementById("quiz");
 startButton.addEventListener("click", startQuiz);
+var index = 0;
+var score = 0;
+countdown = 75;
+
+
 
 function startQuiz(){
-   countdown = 75
-   setsOfQuestions.classList.remove('hide')
+   start.style.display = "none";
+   quiz.style.display = "block";
+   timeStart();
+   renderQuestions();
+  
+   
 
 }
 
-//setInterval to do the timed functionality 
-var countdown = 75; //put it where the function begins  do timeStart =75
 
-function timeStart () {
-   countdown = countdown -1;
-   if (countdown < 75) {
-      timer.innerHTML = countdown;
+function renderQuestions(){
+   var questionsIndexLength = questions.length - 1;
+   if (index <= questionsIndexLength) {
+      document.getElementById("question").innerHTML = questions[index].title;
+      renderQuestionChoices();
    }
 
 }
-if (countdown < 1) {
-   window.clearInterval(update);
+function renderQuestionChoices(){
+      var question = questions[index].choices;
+      for( var option = 0; option < question.length;option++) {
+         var questionOptionDiv = document.getElementById("question-choices");
+         var questionButton = document.createElement("button");
+         questionButton.className = "btn btn-primary";
+         questionButton.innerHTML = question[option];
+         questionButton.setAttribute(
+            "onclick", 
+            "checkAnswer(" + index + "," + option + ");"
+        );
+
+
+         questionOptionDiv.append(questionButton);
+      }
+}
+function checkAnswer(question, answer) {
+   let correctAnswer = questions[question].answer;
+   let userAnswer = questions[question].choices[answer];
+   if (userAnswer == correctAnswer) {
+       index = index + 1;
+   }
+   
+   else {
+       index = index + 1;
+       score = score - 15;
+       console.log(score);
+       console.log("Next question: ", index);
+       console.log("Incorrect");
+   }
+   clearQuestionDiv()
+   renderQuestions();
 }
 
-update = setInterval("timeStart()", 1000);
+   function clearQuestionDiv() {
+      document.getElementById("question-choices").innerHTML = "";
+  }
+
+
+
+function timeStart () {
+   var timerEl = setInterval(function() {
+      countdown--;
+      timer.textContent = countdown+ " Seconds left before the quiz ends ";
+      if (countdown === 0){
+         clearInterval(timerEl);
+      }
+
+
+   },1000)
+   
+}
+
 
 
 

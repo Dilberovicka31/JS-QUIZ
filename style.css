@@ -18,49 +18,44 @@ body {
     padding: 15px;
 
 }
-.start-quiz {
+#quiz-start {
 
     text-align: center;
 
 }
-.start-quiz h2{
-    font-size: 20px;
+#quiz {
+    text-align: center;
 }
+
 #quiz-start1 {
-    margin: 5px 250px 5px 250px;
+    margin: 5px 20em 5px 20em;
     display: flex;
+    font-size: 20px;
+    text-align: center;
 }
-.button-start {
+#button-start {
     background-color: #333399;
     padding: 5px;
     color: white;
+    margin-left: 50em;
 
+
+}
+.container {
+    display: block;
+    margin-left: 18em;
+    font-size: 25px;
+
+}
+#question-choices {
+    display: inline-grid;
+    
 
 }
 button {
     background-color: #333399;
     color: white;
     padding: 5px;
-}
-#sets {
-   
-    display: block;
-    margin: 0 25em 0 25em;
-    display: none;
-    
-
-}
-
-#sets h2{
-    text-align: center;
-}
-
-#sets button {
-    background-color: #333399;
-    color: white;
-    padding: 5px;
-    display: table; 
-    
 }
 
 #done {
