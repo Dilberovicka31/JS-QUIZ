@@ -69,6 +69,7 @@ function checkAnswer(question, answer) {
    else {
       
        score = score - 10;
+       countdown = countdown - 10;
        score.innerHTML = "";
        resultEl.innerHTML = "Wrong"; 
      
