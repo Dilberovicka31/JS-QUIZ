@@ -6,6 +6,8 @@ var start = document.getElementById("start-quiz");
 var quiz = document.getElementById("quiz");
 startButton.addEventListener("click", startQuiz);
 var doneEl = document.getElementById("done");
+var questionEl = document.getElementById("question");
+var questionChoicesEl = document.getElementById("question-choices");
 var index = 0;
 var score = 0;
 countdown = 75;
@@ -110,6 +112,8 @@ function checkAnswer(question, answer) {
    doneEl.style.display = " block";
    clearInterval(timerEl);
    quiz.style.display = "none";
+   questionChoicesEl.style.display = "none";
+   questionEl.style.display = "none";
 
   }
   
