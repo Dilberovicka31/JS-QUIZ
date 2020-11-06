@@ -8,16 +8,19 @@ startButton.addEventListener("click", startQuiz);
 var index = 0;
 var score = 0;
 countdown = 75;
-//var answer = "checkAnswer";
+var timerEl;
+
+// var answer = "checkAnswer";
 
 
 //When the quiz starts hide the first page and display the questions
 function startQuiz(){
+
    start.style.display = "none";
    quiz.style.display = "block";
+   
    timeStart();
    renderQuestions();
-
 }
 
 //Rendering questions
@@ -26,6 +29,8 @@ function renderQuestions(){
    if (index <= questionsIndexLength) {
       document.getElementById("question").innerHTML = questions[index].title;
       renderQuestionChoices();
+   } else{
+      clearInterval(timerEl);
    }
 
 }
@@ -40,44 +45,66 @@ function renderQuestionChoices(){
          questionButton.setAttribute(
             "onclick", 
             "checkAnswer(" + index + "," + option + ");"
+            
         );
 
-
          questionOptionDiv.append(questionButton);
+        
       }
+      
 }
+
 
 //Checking for correct answer
 function checkAnswer(question, answer) {
    let correctAnswer = questions[question].answer;
    let userAnswer = questions[question].choices[answer];
+   var resultEl =  document.getElementById("result");
+   index = index + 1;
    if (userAnswer === correctAnswer) {
-       index = index + 1;
-       
-   }
+      resultEl.innerHTML = " Correct";
    
+   }
+
    else {
-       index = index + 1;
+      
        score = score - 10;
+       score.innerHTML = "";
+       resultEl.innerHTML = "Wrong"; 
+     
+
        console.log(score);
        console.log("Next question: ", index);
-       console.log("Incorrect");
-       
-       
-       
+      console.log ("Incorrect");
        
    }
+   resultEl.style.display = "block";
+   function timeOut() {
+      resultEl.style.display = "none";
+
+   } 
+   setTimeout(timeOut, 500);
+
    clearQuestionDiv()
    renderQuestions();
-}
+    
+    }
+
 
    function clearQuestionDiv() {
       document.getElementById("question-choices").innerHTML = "";
+      
   }
 
+  function quizEnd() {
+
+
+     
+  }
+  
 //Start the timer 
 function timeStart () {
-   var timerEl = setInterval(function() {
+   timerEl = setInterval(function() {
       countdown--;
       timer.textContent = countdown+ " Seconds left before the quiz ends ";
       if (countdown === 0){
@@ -85,12 +112,7 @@ function timeStart () {
          //Display page with input initials
          
       }
-      // else 
-      //    countdown>0
-      //    timer.textContent = "Time is up";
-      
 
-   
    },1000)
    
 }
