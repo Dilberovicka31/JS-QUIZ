@@ -5,6 +5,7 @@ var timer = document.getElementById("timer");
 var start = document.getElementById("start-quiz");
 var quiz = document.getElementById("quiz");
 startButton.addEventListener("click", startQuiz);
+var doneEl = document.getElementById("done");
 var index = 0;
 var score = 0;
 countdown = 75;
@@ -51,7 +52,9 @@ function renderQuestionChoices(){
          questionOptionDiv.append(questionButton);
         
       }
-      
+      function questionsDone(){
+         question.style.display = "none";
+      }
 }
 
 
@@ -60,7 +63,7 @@ function checkAnswer(question, answer) {
    let correctAnswer = questions[question].answer;
    let userAnswer = questions[question].choices[answer];
    var resultEl =  document.getElementById("result");
-   index = index + 1;
+   index++;
    if (userAnswer === correctAnswer) {
       resultEl.innerHTML = " Correct";
    
@@ -77,6 +80,7 @@ function checkAnswer(question, answer) {
        console.log(score);
        console.log("Next question: ", index);
       console.log ("Incorrect");
+      localStorage.setItem("score", "100");
        
    }
    resultEl.style.display = "block";
@@ -85,9 +89,13 @@ function checkAnswer(question, answer) {
 
    } 
    setTimeout(timeOut, 500);
+   if (index < questions.length) {
 
+   
    clearQuestionDiv()
    renderQuestions();
+
+} else quizEnd();
     
     }
 
@@ -98,9 +106,11 @@ function checkAnswer(question, answer) {
   }
 
   function quizEnd() {
+   
+   doneEl.style.display = " block";
+   clearInterval(timerEl);
+   quiz.style.display = "none";
 
-
-     
   }
   
 //Start the timer 
@@ -109,7 +119,8 @@ function timeStart () {
       countdown--;
       timer.textContent = countdown+ " Seconds left before the quiz ends ";
       if (countdown === 0){
-         clearInterval(timerEl);
+         
+         quizEnd();
          //Display page with input initials
          
       }
