@@ -8,6 +8,10 @@ startButton.addEventListener("click", startQuiz);
 var doneEl = document.getElementById("done");
 var questionEl = document.getElementById("question");
 var questionChoicesEl = document.getElementById("question-choices");
+var initialsEl = document.getElementById("initials");
+var submitScore = document.getElementById("initials-submit");
+submitScore.addEventListener("click", storeHighscore);
+var finishEl = document.getElementById("highscores")
 var index = 0;
 var score = 0;
 countdown = 75;
@@ -37,7 +41,7 @@ function renderQuestions(){
    }
 
 }
-//Options 
+//Adding questions options 
 function renderQuestionChoices(){
       var question = questions[index].choices;
       for( var option = 0; option < question.length;option++) {
@@ -68,26 +72,29 @@ function checkAnswer(question, answer) {
    index++;
    if (userAnswer === correctAnswer) {
       resultEl.innerHTML = " Correct";
+      
    
    }
 
    else {
       
-       score = score - 10;
+      ;
        countdown = countdown - 10;
+       score = countdown--;
        score.innerHTML = "";
        resultEl.innerHTML = "Wrong"; 
      
 
        console.log(score);
        console.log("Next question: ", index);
-      console.log ("Incorrect");
-      localStorage.setItem("score", "100");
+       console.log ("Incorrect");
+       localStorage.setItem("score", "100");
        
    }
    resultEl.style.display = "block";
    function timeOut() {
       resultEl.style.display = "none";
+      
 
    } 
    setTimeout(timeOut, 500);
@@ -106,16 +113,24 @@ function checkAnswer(question, answer) {
       document.getElementById("question-choices").innerHTML = "";
       
   }
-
+  function storeHighscore (){
+    
+      doneEl.style.display = "none";
+      localStorage.setItem("initials",initialsEl);
+      finishEl.style.display = "block"
+      
+      
+  }
+//End quiz
   function quizEnd() {
-   
-   doneEl.style.display = " block";
+   doneEl.style.display = "block";
    clearInterval(timerEl);
    quiz.style.display = "none";
    questionChoicesEl.style.display = "none";
    questionEl.style.display = "none";
 
   }
+   
   
 //Start the timer 
 function timeStart () {
