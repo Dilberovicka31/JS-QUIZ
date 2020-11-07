@@ -116,11 +116,10 @@ function checkAnswer(question, answer) {
   function storeHighscore (){
     
       doneEl.style.display = "none";
-      localStorage.setItem("initials",initialsEl);
       finishEl.style.display = "block"
       
-      
   }
+
 //End quiz
   function quizEnd() {
    doneEl.style.display = "block";
@@ -128,6 +127,7 @@ function checkAnswer(question, answer) {
    quiz.style.display = "none";
    questionChoicesEl.style.display = "none";
    questionEl.style.display = "none";
+   
 
   }
    
@@ -149,43 +149,3 @@ function timeStart () {
 }
 
 
-// WHEN the answer is wrong seconds need to be subtracted
-//When all questions are answered the timer needs to stop
-//All done needs to be presented after the questions have been answered = score
-//Input initials to save score to local storage 
-
-
-
-   
-
-
-//set starting score and start the interval to begin the startdown
-
-//Start the interval to begin the countdown
-
-//clear interval to stop the timeout
-
-// VAR CurrentScore /timeleft
-
-
-
-
-
-
-
-//Question to loop over, arrays 
-
-//Var pointer/index - Current position in the question  array index will be set ot 0 to start ques 1. 
-//event delegation to listen to clicks, == pointer global index and then recall next question 
-//VAR QUESTION  = {
-   // {
-    //"Coding related questions"
-                //List of answers 
-                //sub array in object
-                //correct answer
-                //compare property for right answer
-   // }
-//}
-
-//display and hide elements 
-//
