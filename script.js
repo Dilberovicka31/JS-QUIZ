@@ -5,19 +5,24 @@ var timer = document.getElementById("timer");
 var start = document.getElementById("start-quiz");
 var quiz = document.getElementById("quiz");
 startButton.addEventListener("click", startQuiz);
-var doneEl = document.getElementById("done");
 var questionEl = document.getElementById("question");
 var questionChoicesEl = document.getElementById("question-choices");
+var scoreEl = document.getElementById("scorefinal");
 var initialsEl = document.getElementById("initials");
 var submitScore = document.getElementById("initials-submit");
 submitScore.addEventListener("click", storeHighscore);
-var finishEl = document.getElementById("highscores")
+var doneEl = document.getElementById("done");
+var finishEl = document.getElementById("highscores");
+var backBtn = document.getElementById("back");
+var clearBtn = document.getElementById("clear");
+
+
+
 var index = 0;
 var score = 0;
 countdown = 75;
 var timerEl;
-
-// var answer = "checkAnswer";
+var userInp = [];
 
 
 //When the quiz starts hide the first page and display the questions
@@ -53,7 +58,8 @@ function renderQuestionChoices(){
             "onclick", 
             "checkAnswer(" + index + "," + option + ");"
             
-        );
+            
+           );
 
          questionOptionDiv.append(questionButton);
         
@@ -70,10 +76,9 @@ function checkAnswer(question, answer) {
    let userAnswer = questions[question].choices[answer];
    var resultEl =  document.getElementById("result");
    index++;
+
    if (userAnswer === correctAnswer) {
       resultEl.innerHTML = " Correct";
-      
-   
    }
 
    else {
@@ -103,7 +108,7 @@ function checkAnswer(question, answer) {
    
    clearQuestionDiv()
    renderQuestions();
-
+   
 } else quizEnd();
     
     }
@@ -127,6 +132,14 @@ function checkAnswer(question, answer) {
    quiz.style.display = "none";
    questionChoicesEl.style.display = "none";
    questionEl.style.display = "none";
+   backBtn.addEventListener("click", goBack);
+
+   function goBack() {
+      location.reload();
+      return;
+   }
+   
+   
    
 
   }
