@@ -1,8 +1,12 @@
 # JS-QUIZ
+
+
 JAVASCRIPT QUIZ
 
 * Quiz is compiled of multiple choice questions questions with time limits.
 * Questions are based on Javascript fundamentals to help with testing your knowledge.
+
+
 
 
 # Game rules
@@ -17,6 +21,8 @@ JAVASCRIPT QUIZ
 
 
 # Deployed application link : 
+
+ https://dilberovicka31.github.io/JS-QUIZ/
 
 
 
